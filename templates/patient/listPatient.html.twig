@@ -1,0 +1,30 @@
+<h1>Liste des patients</h1>
+<table border="1">
+    <tr>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Phone</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Date Of Birthday</td>
+        <td>Sex</td>
+    </tr>
+    {% for p in listePatient %}
+        <tr>
+            <td>{{  p.firstname }}</td>
+            <td>{{  p.lastname }}</td>
+            <td>{{  p.phone }}</td>
+            <td>{{  p.email }}</td>
+            <td>{{  p.password }}</td>
+            <td>{{  p.dateOfBirth | date}}</td>
+            <td>{{  p.sex }}</td>
+            <td><a href="{{ path ("patientDelete", {'id':v.id}) }}">Delete</a></td>
+            <td><a href="{{ path ("patientUpdate", {'id':v.id}) }}">Update</a></td>
+        </tr>
+    {% endfor %}
+
+
+
+
+
+</table>

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="d-inline-flex flex-wrap">
+        <div class="col-12 col-xl-7 order-2 order-xl-1 sidebar">
+            {% block sidebar %}{% endblock %}
+        </div>
+        <div class="col-12 col-xl-5 order-1 order-xl-2 main-content align-content-center">
+            {% block main_content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

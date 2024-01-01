@@ -1,0 +1,39 @@
+.logo {
+    width: 10rem;
+}
+
+header {
+    background-color: #198754;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link.active, a.nav-link:hover{
+    color: lightgreen;
+}
+
+footer {
+    height: 100px;
+    background-color: #3e3a4e;
+    padding: 10px;
+}
+
+.form-img img {
+    width: 30rem;
+    margin: 2rem auto;
+}
+
+.main-list {
+    margin-top: 5rem;
+}
+
+.main-list li {
+    margin-bottom: 1.5rem;
+}
+
+.main-list li::marker {
+    content: "✔";
+    font-size: 1.5rem;
+}

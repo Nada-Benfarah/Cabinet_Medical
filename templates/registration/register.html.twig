@@ -1,0 +1,59 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+
+{{ parent() }}
+{{ encore_entry_link_tags('form') }}
+{% endblock %}
+
+{% block signIn %}
+    <button class="btn btn-light" onclick="window.location = '{{path('app_login') }}'">Login</button>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center form-img">
+            <img src="{{ asset('img/payment-1.png') }}" alt="payment" class="img">
+        </div>
+    </div>
+{% endblock %}
+
+{% block main_content %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>Register</h1>
+        </div>
+    </div>
+    <div class="form">
+        {{ form_start(registrationForm) }}
+        <div class="row">
+            <div class="col-12">
+                {{ form_row(registrationForm.email, {
+                    'attr': {'class': 'task_field'}
+                }) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password'
+                }) }}
+            </div>
+            <div class="col-12">
+                {{ form_row(registrationForm.agreeTerms) }}
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-success">Register</button>
+            </div>
+            <div class="col">
+                <p>If you have an account, just <a href="{{ path('app_login') }}">login</a>!</p>
+            </div>
+        </div>
+        {{ form_end(registrationForm) }}
+    </div>
+
+{% endblock %}
